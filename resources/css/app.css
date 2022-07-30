@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.input-error {
+    @apply border-red-500 text-red-500 placeholder-red-500;
+}
+
+.message-error {
+    @apply mt-2 text-sm text-red-500;
+}
