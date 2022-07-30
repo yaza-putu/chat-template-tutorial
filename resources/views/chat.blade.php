@@ -21,29 +21,21 @@
         <!-- chat list -->
         <div id="chat-list" class="chat-list">
             <!-- user lists -->
-            <div class="friends">
-                <!-- photo -->
-                <div class="profile friends-photo">
-                    <img src="{{ asset("assets/images/ava2.jpg") }}" alt="">
-                </div>
+            @foreach($friends as $friend)
+                <div class="friends" data-id="{{ $friend->id }}" data-name="{{ $friend->name }}" data-avatar="{{ asset("assets/images"."/"."ava".($loop->iteration + 1).".jpg") }}">
+                    <!-- photo -->
+                    <div class="profile friends-photo">
+                        <img src="{{ asset("assets/images"."/"."ava".(rand(1,8)).".jpg") }}" alt="">
+                    </div>
 
-                <div class="friends-credent">
-                    <!-- name -->
-                    <span class="friends-name">Mario Gomez</span>
-                    <!-- last message -->
-                    <span class="friends-message">Online</span>
+                    <div class="friends-credent">
+                        <!-- name -->
+                        <span class="friends-name">{{ $friend->name }}</span>
+                        <!-- last message -->
+                        <span class="friends-message friend-status">Offline</span>
+                    </div>
                 </div>
-            </div>
-        </div>
-
-        <!-- self-profile -->
-        <div id="self-info" class="self-info">
-            <!-- photo -->
-            <div class="profile your-photo">
-                <img src="{{ asset("assets/images/ava4.jpg") }}" alt="">
-            </div>
-            <!-- name -->
-            <h4 class="name your-name">Iqbal Taufiq</h4>
+            @endforeach
         </div>
     </section>
 
@@ -77,6 +69,9 @@
             <input id="type-area" class="type-area" placeholder="Type something...">
         </div>
     </section>
+</div>
+<div id="creator" class="creator">
+    <p>Login as  <span>{{ auth()->user()->name }}</span></p>
 </div>
 <script src="{{ asset("assets/js/chat.js") }}"></script>
 </body>

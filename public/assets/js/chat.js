@@ -11,6 +11,12 @@ document.addEventListener("DOMContentLoaded", function (e) {
     // handel click friend
     document.querySelectorAll(".friends").forEach(function (el) {
         el.addEventListener("click", function () {
+            let id = el.getAttribute("data-id");
+            let name = el.getAttribute("data-name");
+            let avatar = el.getAttribute("data-avatar");
+            // set chat room properties
+            document.querySelector(".friend-name").innerHTML = name
+            document.querySelector(".header-img").innerHTML = `<img src="${avatar}" />`;
             showHideChatBox(true)
         });
     });
