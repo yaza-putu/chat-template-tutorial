@@ -2,9 +2,11 @@ document.addEventListener("DOMContentLoaded", function (e) {
     document.querySelector("#type-area").addEventListener("keydown", function (e) {
         if (e.key === 'Enter') {
             let input = this.value;
-            sendMessage(input)
+            if (input !== "") {
+                sendMessage(input)
 
-            this.value = ""
+                this.value = ""
+            }
         }
     });
 
