@@ -22,10 +22,13 @@
         <div id="chat-list" class="chat-list">
             <!-- user lists -->
             @foreach($friends as $friend)
-                <div class="friends" data-id="{{ $friend->id }}" data-name="{{ $friend->name }}" data-avatar="{{ asset("assets/images"."/"."ava".($loop->iteration + 1).".jpg") }}">
+             @php 
+                $avatar = "ava".(rand(1,8)).".jpg";
+            @endphp
+                <div class="friends" data-id="{{ $friend->id }}" data-name="{{ $friend->name }}" data-avatar="{{ asset("assets/images"."/".$avatar) }}">
                     <!-- photo -->
                     <div class="profile friends-photo">
-                        <img src="{{ asset("assets/images"."/"."ava".(rand(1,8)).".jpg") }}" alt="">
+                        <img src="{{ asset("assets/images"."/".$avatar) }}" alt="">
                     </div>
 
                     <div class="friends-credent">
