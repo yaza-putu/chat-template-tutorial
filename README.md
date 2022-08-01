@@ -9,7 +9,7 @@
 
 ## Mini Chat Template Tutorial
 
-link youtube : 
+link youtube : [url](https://youtu.be/uFrE7RzXPcc)
 
 ## ERD
 ![url](https://res.cloudinary.com/dk0053zbe/image/upload/v1658935067/chat-erd_lnsnvt.jpg)
